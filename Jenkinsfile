@@ -1,7 +1,7 @@
 pipeline {
     agent any
  tools {
-        nodejs "Nodejs" // Use the name you configured in step 2
+        nodejs "Ecommerce" // Use the name you configured in step 2
     }
     stages {
         stage('Checkout') {
