@@ -5,18 +5,24 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository
-                git url: 'https://github.com/binitapatel164/ecommerce', branch: 'main'
+                git url: 'https://github.com/binitapatel164/ecommerce.git', branch: 'main'
             }
         }
-        age('Build and Test') {
+
+        stage('Build') {
             steps {
-                //tool name: 'Nodejs', type: 'nodejs'
-       //         sh "${npmhome}/bin/npm install"          // Install project dependencies
-         //       sh "${npmhome}/bin/npm run build"        // Build the React project
-           //     sh  "${npmhome}/bin/npm test"             // Run tests if applicable
-       sh 'npm install'          // Install project dependencies
-                sh 'npm run build'        // Build the React project
-                sh  'npm test'             // Run tests if applicable
+                // Perform build steps here
+                // For PHP, you might run commands like composer install or any other necessary build steps
+                git url: 'https://github.com/binitapatel164/ecommerce.git', branch: 'main'
+                
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run PHPUnit tests for test123.php
+                git url: 'https://github.com/binitapatel164/ecommerce.git', branch: 'main'
+                
             }
         }
     }
